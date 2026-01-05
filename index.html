@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burger Queen | Home</title>
+  <link rel="icon" type="image/png" href="images/icon.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav-container">
+    <img src="images/logo.png" class="logo-img" alt="Logo">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div style="display:flex; align-items:center;">
+      <button class="btn-primary open-res">Reserve Now</button>
+      <div class="cart-trigger" onclick="toggleCart()">
+        <img src="https://cdn-icons-png.flaticon.com/512/3081/3081840.png" width="22" style="filter:invert(1)">
+        <div class="cart-badge" id="cart-count">0</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero hidden">
+    <h1>Burgers sizzling.</h1>
+    <h1>Flavors calling.</h1>
+    <h1>Satisfy craving.</h1>
+    <p style="margin: 20px 0; font-size: 1.2rem;">Our burgers are packed with fresh ingredients to hit the spot.</p>
+    <button class="btn-primary open-res">Reserve Now</button>
+  </header>
+
+  <!-- CATEGORIES -->
+  <section class="menu-grid hidden">
+    <a href="menu.html#burgers" class="food-card">
+      <img src="images/cont-2-img-1.jpg">
+      <h3>BURGERS</h3>
+    </a>
+    <a href="menu.html#sides" class="food-card">
+      <img src="images/cont-2-img-2.jpg">
+      <h3>SIDES</h3>
+    </a>
+    <a href="menu.html#salads" class="food-card">
+      <img src="images/cont-2-img-3.jpg">
+      <h3>SALADS</h3>
+    </a>
+  </section>
+
+  <!-- FEATURED MENU -->
+  <section style="text-align:center; padding: 50px 0;" class="hidden">
+    <button id="toggleMenu" class="btn-primary" style="background:var(--off-white); color:var(--bun-brown);">View
+      Featured Menu</button>
+    <div id="featuredGrid" class="menu-grid" style="display:none; margin-top:30px;">
+      <div class="food-card"><img src="menu/beef-cheese-1.png">
+        <h3>BEEF CHEESE</h3>
+        <p class="price">P149.0</p><button class="btn-primary"
+          onclick="addToCart('Beef Cheese', 149, 'menu/beef-cheese-1.png')">Add to Cart</button>
+      </div>
+      <div class="food-card"><img src="menu/fries.png">
+        <h3>POTATO FRIES</h3>
+        <p class="price">P89.0</p><button class="btn-primary" onclick="addToCart('Fries', 89, 'menu/fries.png')">Add to
+          Cart</button>
+      </div>
+      <div class="food-card"><img src="menu/chocolate.png">
+        <h3>CHOCO SHAKE</h3>
+        <p class="price">P89.0</p><button class="btn-primary"
+          onclick="addToCart('Choco Shake', 89, 'menu/chocolate.png')">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section hidden">
+    <div class="about-content">
+      <img src="images/about-logo.png" style="width:300px; border-radius:20px;">
+      <div class="about-text">
+        <h2 style="font-family: var(--font-heading); font-size: 3rem;">About Us</h2>
+        <p>At Burger Queen, we believe in serving more than just burgers; we serve experiences. Welcome to a kingdom of
+          flavor.</p>
+      </div>
+    </div>
+    <div class="features-grid">
+      <div class="food-card"><img src="images/fresh-icon.png">
+        <h3>Fresh Ingredients</h3>
+        <p>Locally sourced, organic produce.</p>
+      </div>
+      <div class="food-card"><img src="images/service-icon.png">
+        <h3>Best Services</h3>
+        <p>Friendly staff dedicated to you.</p>
+      </div>
+      <div class="food-card"><img src="images/price-icon.png">
+        <h3>Best Prices</h3>
+        <p>Royal taste at affordable prices.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRAMS -->
+  <section class="grams-section hidden">
+    <h2 style="font-family: var(--font-heading); font-size: 3rem; margin-bottom: 30px;">Check Out Our Grams!</h2>
+    <div class="grams-grid">
+      <img src="images/grams-img-1.jpg"><img src="images/grams-img-2.jpg">
+      <img src="images/grams-img-3.jpg"><img src="images/grams-img-4.jpg">
+    </div>
+    <a href="https://instagram.com" target="_blank" class="btn-primary"
+      style="text-decoration:none; margin-top:30px; display:inline-block;">Follow Instagram</a>
+  </section>
+
+  <!-- FOOTER / CONTACT -->
+  <footer id="contact" class="hidden">
+    <div class="footer-container">
+      <div class="footer-col"><img src="images/footer-logo.png" height="100"></div>
+      <div class="footer-col">
+        <h4>Browse</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>Iloilo City</li>
+          <li>dmbenedicto11@gmail.com</li>
+          <li>0970 788 3235</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Social</h4>
+        <div style="display:flex; gap:10px;"><img src="images/facebook-icon.png" width="30"> <img
+            src="images/instagram-iconn.png" width="30"> <img src="images/twitter-icon.png" width="30"></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART & MODALS -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h2 style="font-family: var(--font-heading);">My Cart</h2><button onclick="toggleCart()"
+        style="background:none; border:none; color:white; font-size:30px; cursor:pointer;">&times;</button>
+    </div>
+    <div class="cart-items-list" id="cartItems"></div>
+    <div class="cart-footer">
+      <div
+        style="display:flex; justify-content:space-between; font-family:var(--font-heading); font-size:1.5rem; margin-bottom:20px;">
+        <span>Total:</span><span id="cart-total">P0.0</span>
+      </div><button class="btn-primary" style="width:100%;" onclick="checkout()">Checkout Now</button>
+    </div>
+  </div>
+  <div class="modal" id="resModal">
+    <div class="modal-content"><button class="closeModal"
+        style="float:right; border:none; border-radius:50%; padding:5px 10px; cursor:pointer;">X</button>
+      <h2 style="font-family:var(--font-heading); margin-bottom:20px;">Reservation</h2>
+      <form class="reservationForm"><input type="text" class="custName" placeholder="Your Name"
+          style="width:100%; padding:10px; margin-bottom:15px; border-radius:8px; border:none;" required><input
+          type="date" style="width:100%; padding:10px; margin-bottom:15px; border-radius:8px; border:none;"
+          required><button type="submit" class="btn-primary" style="width:100%;">Reserve Now</button></form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

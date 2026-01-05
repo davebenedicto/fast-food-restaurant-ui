@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="sample.css">
+  <title>Document</title>
+</head>
+
+
+
+<body>
+
+  <div class="order-now">
+    <div class="form">
+      <header>
+        <div class="title">
+          <h1>Reservation</h1>
+        </div>
+        <div class="close">
+          <button id="close-btn">X</button>
+        </div>
+      </header>
+      <div class="products">
+        <fieldset>
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" required>
+        </fieldset>
+        <fieldset>
+          <label for="name">Email</label>
+          <input type="email" name="email" id="email" required>
+        </fieldset>
+        <fieldset>
+          <label for="name">Reservation Date</label>
+          <input type="date" name="date" id="date" required>
+        </fieldset>
+        <fieldset>
+          <label for="name">Message</label>
+          <textarea name="msg" id="msg" required></textarea>
+        </fieldset>
+      </div>
+      <div class="order">
+        <button onclick="showAlert()" class="reservation-order-btn">Reserve Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-div">
+
+    <div class="nav-container hidden">
+      <div class="box-1">
+        <img src="images/logo.png" class="logo-img">
+      </div>
+
+      <div class="box-2">
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html" target="_blank">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="box-3">
+        <button class="order-button order-buttons">Reserve Now</button>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="container-1 hidden">
+
+    <div class="text-container">
+      <p class="text-1">Burgers sizzling.</p>
+    </div>
+    <div class="text-container">
+      <p class="text-1">Flavors calling.</p>
+    </div>
+    <div class="text-container">
+      <p class="text-1">Satisfy craving.</p>
+    </div>
+    <div class="text-container">
+      <p class="text-2">Whether you're craving beef or chicken, our burgers packed with fresh ingredients <br> are sure
+        to hit the spot and leave you satisfied.</p>
+    </div>
+    <div class="button-container">
+      <button class="container-1-button order-buttons">Reserve Now</button>
+    </div>
+
+  </div>
+
+
+
+
+
+  <div class="container-2 hidden">
+
+    <div class="box-4">
+      <a href="menu.html #burgers" target="_blank"><img src="images/cont-2-img-1.jpg" class="container-2-img"></a>
+      <p class="box-4-text">Burgers</p>
+    </div>
+
+    <div class="box-4">
+      <a href="menu.html #sides" target="_blank"><img src="images/cont-2-img-2.jpg" class="container-2-img"></a>
+      <p class="box-4-text">Sides</p>
+    </div>
+
+    <div class="box-4">
+      <a href="menu.html #salads" target="_blank"><img src="images/cont-2-img-3.jpg" class="container-2-img"></a>
+      <p class="box-4-text">Salads</p>
+    </div>
+
+    <div class="box-4">
+      <a href="menu.html #drinks" target="_blank"><img src="images/cont-2-img-4.jpg" class="container-2-img"></a>
+      <p class="box-4-text">Drinks</p>
+    </div>
+
+  </div>
+
+
+
+
+
+  <div class="container-3 hidden">
+
+    <div class="box-5">
+      <p class="text-3">Get a 60% Discount <br>On Black Friday</p>
+      <div class="container-3-div">
+        <button class="container-3-button order-buttons">Reserve Now</button>
+      </div>
+    </div>
+
+    <div class="box-6">
+      <p class="text-3">Enjoy 25% off all drinks <br>on your first order</p>
+      <div class="container-3-div">
+        <button class="container-3-button order-buttons">Reserve Now</button>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+<script>
+
+  $(document).ready(function () {
+    $(".order-buttons").click(function () {
+      $(".order-now").css("backgroundColor", "#00000094")
+        .css("display", "flex")
+        .css("alignItems", "center")
+        .css("justifyContent", "center")
+        .css("opacity", 0)
+        .show()
+        .animate({ opacity: 1 });
+
+      $("#close-btn").click(function () {
+        $(".order-now").fadeOut();
+      });
+
+      $(".order button").click(function() {
+        Swal.fire({
+        title: "Thank you for your reservation",
+        text: "We hope to see you again",
+        icon: "success",
+        confirmButtonText: "Okay"
+      });
+      });
+    });
+
+    function showAlert() {
+      
+    }
+  });
+
+</script>
+
+</html>

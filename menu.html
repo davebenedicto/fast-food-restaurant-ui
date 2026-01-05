@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burger Queen | Menu</title>
+  <link rel="icon" type="image/png" href="images/icon.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+  <nav class="nav-container">
+    <img src="images/logo.png" class="logo-img" alt="Logo">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div style="display:flex; align-items:center;">
+      <button class="btn-primary open-res">Reserve Now</button>
+      <div class="cart-trigger" onclick="toggleCart()">
+        <img src="https://cdn-icons-png.flaticon.com/512/3081/3081840.png" width="22" style="filter:invert(1)">
+        <div class="cart-badge" id="cart-count">0</div>
+      </div>
+    </div>
+  </nav>
+
+  <h1 style="text-align:center; font-family:var(--font-heading); font-size:4rem; margin:60px 0;">Royal Menu</h1>
+
+  <!-- CATEGORIES -->
+  <h2 id="burgers"
+    style="text-align:center; font-family:var(--font-heading); color:var(--flame-orange); margin-top:40px;">Burgers</h2>
+  <div class="menu-grid">
+    <div class="food-card"><img src="menu/beef-cheese-1.png">
+      <h3>BEEF CHEESE</h3>
+      <p class="price">P149.0</p><button class="btn-primary"
+        onclick="addToCart('Beef Cheese', 149, 'menu/beef-cheese-1.png')">Add to Cart</button>
+    </div>
+    <div class="food-card"><img src="menu/bacon-cheese-1.png">
+      <h3>BACON CHEESE</h3>
+      <p class="price">P159.0</p><button class="btn-primary"
+        onclick="addToCart('Bacon Cheese', 159, 'menu/bacon-cheese-1.png')">Add to Cart</button>
+    </div>
+    <div class="food-card"><img src="menu/chicken-1.png">
+      <h3>CHICKEN</h3>
+      <p class="price">P169.0</p><button class="btn-primary"
+        onclick="addToCart('Chicken', 169, 'menu/chicken-1.png')">Add to Cart</button>
+    </div>
+    <div class="food-card"><img src="menu/classic-beef-1.png">
+      <h3>CLASSIC BEEF</h3>
+      <p class="price">P139.0</p><button class="btn-primary"
+        onclick="addToCart('Classic Beef', 139, 'menu/classic-beef-1.png')">Add to Cart</button>
+    </div>
+  </div>
+
+  <h2 id="sides"
+    style="text-align:center; font-family:var(--font-heading); color:var(--flame-orange); margin-top:60px;">Sides</h2>
+  <div class="menu-grid">
+    <div class="food-card"><img src="menu/fries.png">
+      <h3>POTATO FRIES</h3>
+      <p class="price">P89.0</p><button class="btn-primary" onclick="addToCart('Fries', 89, 'menu/fries.png')">Add to
+        Cart</button>
+    </div>
+    <div class="food-card"><img src="menu/onion-rings.png">
+      <h3>ONION RINGS</h3>
+      <p class="price">P89.0</p><button class="btn-primary"
+        onclick="addToCart('Onion Rings', 89, 'menu/onion-rings.png')">Add to Cart</button>
+    </div>
+    <div class="food-card"><img src="menu/pasta.png">
+      <h3>PASTA</h3>
+      <p class="price">P99.0</p><button class="btn-primary" onclick="addToCart('Pasta', 99, 'menu/pasta.png')">Add to
+        Cart</button>
+    </div>
+  </div>
+
+  <h2 id="salads"
+    style="text-align:center; font-family:var(--font-heading); color:var(--flame-orange); margin-top:60px;">Salads</h2>
+  <div class="menu-grid">
+    <div class="food-card"><img src="menu/caesar-salad.png">
+      <h3>CAESAR SALAD</h3>
+      <p class="price">P109.0</p><button class="btn-primary"
+        onclick="addToCart('Caesar Salad', 109, 'menu/caesar-salad.png')">Add to Cart</button>
+    </div>
+    <div class="food-card"><img src="menu/chicken-salad.png">
+      <h3>CHICKEN SALAD</h3>
+      <p class="price">P109.0</p><button class="btn-primary"
+        onclick="addToCart('Chicken Salad', 109, 'menu/chicken-salad.png')">Add to Cart</button>
+    </div>
+  </div>
+
+  <h2 id="drinks"
+    style="text-align:center; font-family:var(--font-heading); color:var(--flame-orange); margin-top:60px;">Drinks</h2>
+  <div class="menu-grid">
+    <div class="food-card"><img src="menu/vanilla.png">
+      <h3>VANILLA SHAKE</h3>
+      <p class="price">P79.0</p><button class="btn-primary"
+        onclick="addToCart('Vanilla Shake', 79, 'menu/vanilla.png')">Add to Cart</button>
+    </div>
+    <div class="food-card"><img src="menu/chocolate.png">
+      <h3>CHOCO SHAKE</h3>
+      <p class="price">P89.0</p><button class="btn-primary"
+        onclick="addToCart('Choco Shake', 89, 'menu/chocolate.png')">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="contact" style="margin-top:100px;">
+    <div class="footer-container">
+      <div class="footer-col"><img src="images/footer-logo.png" height="100"></div>
+      <div class="footer-col">
+        <h4>Browse</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>Iloilo City</li>
+          <li>dmbenedicto11@gmail.com</li>
+          <li>0970 788 3235</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART & MODALS -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h2 style="font-family: var(--font-heading);">My Cart</h2><button onclick="toggleCart()"
+        style="background:none; border:none; color:white; font-size:30px; cursor:pointer;">&times;</button>
+    </div>
+    <div class="cart-items-list" id="cartItems"></div>
+    <div class="cart-footer">
+      <div
+        style="display:flex; justify-content:space-between; font-family:var(--font-heading); font-size:1.5rem; margin-bottom:20px;">
+        <span>Total:</span><span id="cart-total">P0.0</span>
+      </div><button class="btn-primary" style="width:100%;" onclick="checkout()">Checkout Now</button>
+    </div>
+  </div>
+  <div class="modal" id="resModal">
+    <div class="modal-content"><button class="closeModal"
+        style="float:right; border:none; border-radius:50%; padding:5px 10px; cursor:pointer;">X</button>
+      <h2 style="font-family:var(--font-heading); margin-bottom:20px;">Reservation</h2>
+      <form class="reservationForm"><input type="text" class="custName" placeholder="Your Name"
+          style="width:100%; padding:10px; margin-bottom:15px; border-radius:8px; border:none;" required><input
+          type="date" style="width:100%; padding:10px; margin-bottom:15px; border-radius:8px; border:none;"
+          required><button type="submit" class="btn-primary" style="width:100%;">Reserve Now</button></form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
